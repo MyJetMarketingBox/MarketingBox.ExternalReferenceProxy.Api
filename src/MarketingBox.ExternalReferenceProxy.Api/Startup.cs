@@ -6,14 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Autofac;
 using MarketingBox.ExternalReferenceProxy.Api.Modules;
-using MarketingBox.ExternalReferenceProxy.Api.Services;
-using MyJetWallet.Sdk.GrpcMetrics;
 using MyJetWallet.Sdk.GrpcSchema;
 using MyJetWallet.Sdk.Service;
 using Prometheus;
-using ProtoBuf.Grpc.Server;
-using MarketingBox.ExternalReferenceProxy.Api.Grpc;
-using SimpleTrading.BaseMetrics;
 using SimpleTrading.ServiceStatusReporterConnector;
 
 namespace MarketingBox.ExternalReferenceProxy.Api
@@ -53,8 +48,6 @@ namespace MarketingBox.ExternalReferenceProxy.Api
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcSchema<HelloService, IHelloService>();
-
                 endpoints.MapGrpcSchemaRegistry();
                 endpoints.MapControllers();
 

@@ -32,11 +32,11 @@ namespace MarketingBox.ExternalReferenceProxy.Api
 
         public static void Main(string[] args)
         {
-            Console.Title = "MyJetWallet MarketingBox.ExternalReferenceProxy.Api";
+            Console.Title = "MarketingBox.ExternalReferenceProxy.Api";
 
             Settings = SettingsReader.GetSettings<SettingsModel>(SettingsFileName);
 
-            using var loggerFactory = LogConfigurator.ConfigureElk("MyJetWallet", Settings.SeqServiceUrl, Settings.ElkLogs);
+            using var loggerFactory = LogConfigurator.ConfigureElk("MarketingBox", Settings.SeqServiceUrl, Settings.ElkLogs);
 
             var logger = loggerFactory.CreateLogger<Program>();
 

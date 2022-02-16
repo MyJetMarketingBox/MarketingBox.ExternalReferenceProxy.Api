@@ -1,6 +1,8 @@
 ﻿using Autofac;
-using Autofac.Core;
-using Autofac.Core.Registration;
+using MarketingBox.ExternalReferenceProxy.Api.Domain.Models;
+using MarketingBox.ExternalReferenceProxy.Service.Domain.Models;
+using MyJetWallet.Sdk.NoSql;
+using MyJetWallet.Sdk.ServiceBus;
 
 namespace MarketingBox.ExternalReferenceProxy.Api.Modules
 {
@@ -8,7 +10,16 @@ namespace MarketingBox.ExternalReferenceProxy.Api.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
+            var noSqlClient = builder.CreateNoSqlClient(Program.ReloadedSettings(e => e.MyNoSqlReaderHostPort));
+            builder.RegisterMyNoSqlReader<RegistrationProxyEntityNoSql>(noSqlClient, RegistrationProxyEntityNoSql.TableName);
             
+            var serviceBusClient = builder
+                .RegisterMyServiceBusTcpClient(
+                    Program.ReloadedSettings(e => e.MarketingBoxServiceBusHostPort),
+                    Program.LogFactory);
+            
+            builder.RegisterMyServiceBusPublisher<RegistrationProxyEntityServiceBus>(serviceBusClient, 
+                RegistrationProxyEntityServiceBus.Topic, false);
         }
     }
 }
