@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference PrivateAssets="All" Include="..\MarketingBox.ExternalReferenceProxy.Api.Domain.Models\MarketingBox.ExternalReferenceProxy.Api.Domain.Models.csproj" />
-    <ProjectReference PrivateAssets="All" Include="..\MarketingBox.ExternalReferenceProxy.Api.Grpc\MarketingBox.ExternalReferenceProxy.Api.Grpc.csproj" />
   </ItemGroup>
 
   <ItemGroup>

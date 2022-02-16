@@ -28,8 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MarketingBox.ExternalReferenceProxy.Api.Domain.Models\MarketingBox.ExternalReferenceProxy.Api.Domain.Models.csproj" />
     <ProjectReference Include="..\MarketingBox.ExternalReferenceProxy.Api.Domain\MarketingBox.ExternalReferenceProxy.Api.Domain.csproj" />
-    <ProjectReference Include="..\MarketingBox.ExternalReferenceProxy.Api.Grpc\MarketingBox.ExternalReferenceProxy.Api.Grpc.csproj" />
   </ItemGroup>
 
   <ItemGroup>
