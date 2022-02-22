@@ -5,13 +5,19 @@ namespace MarketingBox.ExternalReferenceProxy.Api.Settings
 {
     public class SettingsModel
     {
-        [YamlProperty("ExternalReferenceProxy.Api.SeqServiceUrl")]
+        [YamlProperty("ExternalReferenceProxyApi.SeqServiceUrl")]
         public string SeqServiceUrl { get; set; }
 
-        [YamlProperty("ExternalReferenceProxy.Api.ZipkinUrl")]
+        [YamlProperty("ExternalReferenceProxyApi.ZipkinUrl")]
         public string ZipkinUrl { get; set; }
 
-        [YamlProperty("ExternalReferenceProxy.Api.ElkLogs")]
+        [YamlProperty("ExternalReferenceProxyApi.ElkLogs")]
         public LogElkSettings ElkLogs { get; set; }
+
+        [YamlProperty("ExternalReferenceProxyApi.MyNoSqlReaderHostPort")]
+        public string MyNoSqlReaderHostPort { get; set; }
+
+        [YamlProperty("ExternalReferenceProxyApi.MarketingBoxServiceBusHostPort")]
+        public string MarketingBoxServiceBusHostPort { get; set; }
     }
 }

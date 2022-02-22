@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference PrivateAssets="All" Include="..\MarketingBox.ExternalReferenceProxy.Api.Domain.Models\MarketingBox.ExternalReferenceProxy.Api.Domain.Models.csproj" />
-    <ProjectReference PrivateAssets="All" Include="..\MarketingBox.ExternalReferenceProxy.Api.Grpc\MarketingBox.ExternalReferenceProxy.Api.Grpc.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,12 +23,12 @@
     <TargetsForTfmSpecificBuildOutput>
       $(TargetsForTfmSpecificBuildOutput);PackReferencedProjectOutputs
     </TargetsForTfmSpecificBuildOutput>
-    <PackageId>MyJetWallet.Service.ExternalReferenceProxy.Api.Client</PackageId>
-    <Authors>MyJetWallet</Authors>
-    <Company>MyJetWallet</Company>
-    <Product>MyJetWallet</Product>
-    <PackageProjectUrl>https://github.com/MyJetWallet/Service.ExternalReferenceProxy.Api</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/MyJetWallet/Service.ExternalReferenceProxy.Api</RepositoryUrl>
+    <PackageId></PackageId>
+    <Authors></Authors>
+    <Company></Company>
+    <Product></Product>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
   </PropertyGroup>
 
   <Target Name="PackReferencedProjectOutputs" DependsOnTargets="BuildOnlySettings;ResolveReferences">

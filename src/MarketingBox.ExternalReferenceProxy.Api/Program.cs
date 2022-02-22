@@ -14,7 +14,7 @@ namespace MarketingBox.ExternalReferenceProxy.Api
 {
     public class Program
     {
-        public const string SettingsFileName = ".myjetwallet";
+        public const string SettingsFileName = ".marketingboxexternalreferenceproxyapi";
 
         public static SettingsModel Settings { get; private set; }
 
@@ -32,11 +32,11 @@ namespace MarketingBox.ExternalReferenceProxy.Api
 
         public static void Main(string[] args)
         {
-            Console.Title = "MyJetWallet MarketingBox.ExternalReferenceProxy.Api";
+            Console.Title = "MarketingBox.ExternalReferenceProxy.Api";
 
             Settings = SettingsReader.GetSettings<SettingsModel>(SettingsFileName);
 
-            using var loggerFactory = LogConfigurator.ConfigureElk("MyJetWallet", Settings.SeqServiceUrl, Settings.ElkLogs);
+            using var loggerFactory = LogConfigurator.ConfigureElk("MarketingBox", Settings.SeqServiceUrl, Settings.ElkLogs);
 
             var logger = loggerFactory.CreateLogger<Program>();
 
