@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference PrivateAssets="All" Include="..\MarketingBox.ExternalReferenceProxy.Api.Domain.Models\MarketingBox.ExternalReferenceProxy.Api.Domain.Models.csproj" />
+    <ProjectReference PrivateAssets="All" 
+                      Include="..\MarketingBox.ExternalReferenceProxy.Api.Domain.Models\MarketingBox.ExternalReferenceProxy.Api.Domain.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,12 +24,12 @@
     <TargetsForTfmSpecificBuildOutput>
       $(TargetsForTfmSpecificBuildOutput);PackReferencedProjectOutputs
     </TargetsForTfmSpecificBuildOutput>
-    <PackageId></PackageId>
-    <Authors></Authors>
-    <Company></Company>
-    <Product></Product>
-    <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl></RepositoryUrl>
+    <PackageId>MarketingBox.ExternalReferenceProxy.Api.Client</PackageId>
+    <Authors>MarketingBox</Authors>
+    <Company>MarketingBox</Company>
+    <Product>MarketingBox</Product>
+    <PackageProjectUrl>https://github.com/MyJetMarketingBox/MarketingBox.ExternalReferenceProxy.Api</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MyJetMarketingBox/MarketingBox.ExternalReferenceProxy.Api</RepositoryUrl>
   </PropertyGroup>
 
   <Target Name="PackReferencedProjectOutputs" DependsOnTargets="BuildOnlySettings;ResolveReferences">
