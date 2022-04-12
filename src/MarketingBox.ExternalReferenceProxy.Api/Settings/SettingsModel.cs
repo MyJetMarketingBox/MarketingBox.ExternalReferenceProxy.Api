@@ -20,7 +20,7 @@ namespace MarketingBox.ExternalReferenceProxy.Api.Settings
         [YamlProperty("ExternalReferenceProxyApi.MarketingBoxServiceBusHostPort")]
         public string MarketingBoxServiceBusHostPort { get; set; }
 
-        [YamlProperty("ExternalReferenceProxyApi.MarketingBoxTrackingLinkServiceUrl")]
-        public string MarketingBoxTrackingLinkServiceUrl { get; set; }
+        [YamlProperty("ExternalReferenceProxyApi.TrackingLinkServiceUrl")]
+        public string TrackingLinkServiceUrl { get; set; }
     }
 }
