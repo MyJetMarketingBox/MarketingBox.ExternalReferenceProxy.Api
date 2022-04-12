@@ -29,6 +29,7 @@ namespace MarketingBox.ExternalReferenceProxy.Api
             });
 
             services.AddMyTelemetry("SP-", Program.Settings.ZipkinUrl);
+            services.AddAutoMapper(typeof(Startup));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

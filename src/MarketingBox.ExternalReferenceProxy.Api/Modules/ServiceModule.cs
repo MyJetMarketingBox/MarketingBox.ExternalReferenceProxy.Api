@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using MarketingBox.ExternalReferenceProxy.Api.Domain.Models;
 using MarketingBox.ExternalReferenceProxy.Service.Domain.Models;
+using MarketingBox.TrackingLink.Service.Client;
 using MyJetWallet.Sdk.NoSql;
 using MyJetWallet.Sdk.ServiceBus;
 
@@ -20,6 +21,8 @@ namespace MarketingBox.ExternalReferenceProxy.Api.Modules
             
             builder.RegisterMyServiceBusPublisher<RegistrationProxyEntityServiceBus>(serviceBusClient, 
                 RegistrationProxyEntityServiceBus.Topic, false);
+
+            builder.ServiceClient(Program.ReloadedSettings(e => e.TrackingLinkServiceUrl).Invoke());
         }
     }
 }
