@@ -15,7 +15,7 @@ namespace MarketingBox.ExternalReferenceProxy.Api.Controllers
     public class ProxyControllerV2 : ControllerBase
     {
         private readonly ITrackingLinkService _trackingLinkService;
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
 
         public ProxyControllerV2(
             ITrackingLinkService trackingLinkService, IMapper mapper)
@@ -33,7 +33,7 @@ namespace MarketingBox.ExternalReferenceProxy.Api.Controllers
                 new TrackingLinkCreateRequest
                 {
                     UniqueId = uniqueId,
-                    LinkParameterValues = _mapper.Map<LinkParameters>(linkParameters)
+                    LinkParameterValues = _mapper.Map<LinkParameterValues>(linkParameters)
                 });
 
             this.ProcessResult(response);

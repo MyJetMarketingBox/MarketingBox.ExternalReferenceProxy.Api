@@ -8,7 +8,7 @@ namespace MarketingBox.ExternalReferenceProxy.Api.MapperProfiles
     {
         public LinkParametersMapperProfile()
         {
-            CreateMap<LinkParametersModel, LinkParameters>();
+            CreateMap<LinkParametersModel, LinkParameterValues>();
         }
     }
 }
