@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Autofac;
+using AutoWrapper;
 using MarketingBox.ExternalReferenceProxy.Api.Modules;
+using MarketingBox.Sdk.Common.Models.RestApi;
 using MyJetWallet.Sdk.GrpcSchema;
 using MyJetWallet.Sdk.Service;
 using Prometheus;
@@ -41,6 +43,13 @@ namespace MarketingBox.ExternalReferenceProxy.Api
 
             app.UseRouting();
 
+            app.UseApiResponseAndExceptionWrapper<ApiResponseMap>(
+                new AutoWrapperOptions
+                {
+                    UseCustomSchema = true,
+                    IgnoreWrapForOkRequests = true
+                });
+            
             app.UseMetricServer();
 
             app.BindServicesTree(Assembly.GetExecutingAssembly());
