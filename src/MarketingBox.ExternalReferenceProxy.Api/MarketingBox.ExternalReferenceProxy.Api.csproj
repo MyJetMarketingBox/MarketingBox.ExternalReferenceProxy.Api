@@ -12,8 +12,8 @@
     <PackageReference Include="Grpc.AspNetCore" Version="2.42.0" />
     <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
     <PackageReference Include="MarketingBox.ExternalReferenceProxy.Service.Client" Version="1.0.3" />
-    <PackageReference Include="MarketingBox.Sdk.Common" Version="1.0.10" />
-    <PackageReference Include="MarketingBox.TrackingLink.Service.Client" Version="1.0.4" />
+    <PackageReference Include="MarketingBox.Sdk.Common" Version="1.0.13" />
+    <PackageReference Include="MarketingBox.TrackingLink.Service.Client" Version="1.0.6" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     <PackageReference Include="MyJetWallet.Sdk.GrpcMetrics" Version="2.0.4" />
