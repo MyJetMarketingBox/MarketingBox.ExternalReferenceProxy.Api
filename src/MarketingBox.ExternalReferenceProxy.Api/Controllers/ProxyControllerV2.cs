@@ -7,6 +7,7 @@ using MarketingBox.TrackingLink.Service.Domain.Models;
 using MarketingBox.TrackingLink.Service.Grpc;
 using MarketingBox.TrackingLink.Service.Grpc.Requests;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace MarketingBox.ExternalReferenceProxy.Api.Controllers
 {
@@ -16,12 +17,16 @@ namespace MarketingBox.ExternalReferenceProxy.Api.Controllers
     {
         private readonly ITrackingLinkService _trackingLinkService;
         private readonly IMapper _mapper;
+        private ILogger<ProxyControllerV2> _logger;
 
         public ProxyControllerV2(
-            ITrackingLinkService trackingLinkService, IMapper mapper)
+            ITrackingLinkService trackingLinkService, 
+            IMapper mapper, 
+            ILogger<ProxyControllerV2> logger)
         {
             _trackingLinkService = trackingLinkService;
             _mapper = mapper;
+            _logger = logger;
         }
 
         [HttpGet("{uniqueId}")]
@@ -29,6 +34,7 @@ namespace MarketingBox.ExternalReferenceProxy.Api.Controllers
             [FromRoute, Required] string uniqueId,
             [FromQuery] LinkParametersModel linkParameters)
         {
+            _logger.LogInformation("Request with uniqueId {@UniqueId} and {@LinkParameters}", uniqueId, linkParameters);
             var response = await _trackingLinkService.CreateAsync(
                 new TrackingLinkCreateRequest
                 {
@@ -37,6 +43,8 @@ namespace MarketingBox.ExternalReferenceProxy.Api.Controllers
                 });
 
             this.ProcessResult(response);
+            
+            _logger.LogInformation("Url {@Url}", response.Data);
             return RedirectPermanent(response.Data);
         }
     }
